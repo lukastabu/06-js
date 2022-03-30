@@ -9,7 +9,7 @@ Duomenu tipoas:
 number = 1; 1.5; 9999;
 string (tekstas) = abd; Lukas;
 boolean (logine reiksme) = true; false.
-array (sarasas, masyvas, matrica)
+array (sarasas, masyvas, matrica) = [1, 5]; [a, labas]; [true, true, false];
 
 */
 

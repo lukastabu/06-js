@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./js/hw.js",
+    "dev": "nodemon ./js/02-numbers.js",
+    "hw": "nodemon ./js/hw.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
