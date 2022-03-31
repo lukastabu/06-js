@@ -12,3 +12,8 @@ for (let index = 0; index < pazymiai.length; index++) {
 
 let vidurkis = suma / pazymiai.length;
 console.log(vidurkis);
+
+console.log('xxxxxxxxxxxxxxxxxxxxxxxx');
+for (let i= -10; i < 1; i++) {
+    console.log(i);
+}
