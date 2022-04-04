@@ -50,3 +50,19 @@ let tekstas = 'labas'
 
 let firstletter = text => text[0];
 console.log(firstletter(tekstas));
+
+console.log('xxxxxxxxxxxxxxxxxxxxxxxxx');
+console.log('SUMA INTERVALE FUNKCIJA');
+function sumaIntervale(nuo, iki) {
+    let suma = 0;
+    for (let index = nuo; index <= iki; index++) {
+        suma += index;
+    }
+    return suma;
+}
+
+console.log(sumaIntervale (0,0));
+console.log(sumaIntervale (0,4));
+console.log(sumaIntervale (0,100));
+console.log(sumaIntervale (-50,50));
+console.log(sumaIntervale (-70,30));
