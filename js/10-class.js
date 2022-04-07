@@ -79,5 +79,6 @@ console.log(bankomatas1.money);
 bankomatas1.cashIn(true);
 console.log(bankomatas1.money);
 
-console.log('xxxxxxxxxxxxxxx');
+/* console.log('xxxxxxxxxxxxxxx');
 console.log('Radio');
+*/
