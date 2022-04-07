@@ -45,6 +45,17 @@ console.log('RANDOM NUMBER: [0...1) nuo nulio imtinai iki vieno neimtinai ');
 console.log(Math.random());
 console.log(Math.random());
 console.log(Math.random());
+
+let randomnr = Math.floor(Math.random()*10); // [0..9]
+console.log(randomnr);
+let nuo = 10;
+let iki = 19;
+let randomNuoIki = nuo + Math.floor(Math.random()*(iki-nuo+1));
+for (let index = 0; index < 20; index++) {
+    console.log(randomNuoIki);
+}
+
+
 console.log('MIN-MAX');
 console.log(Math.min(10, 0, 5));    // atrenka ZEMIAUSIA, bet veikia tik ant skaiciu
 console.log(Math.max(1, 10, 5));    // atrenka DIDZIAUSIA, bet veikia tik ant skaiciu
@@ -131,9 +142,142 @@ console.log('xxxxxxxxxxxxxxx');
 
 console.log(diena.reverse());
 
-console.log('kiti: map, filter, sort, reduce, every, flat, forEach');
+console.log('kiti: map, filter, reduce, sort, every, flat, forEach');
+let pazymiai = [8, 7, 10, 5, 10];
+console.log('xxxxxxxxxxxxxxx');
+console.log(pazymiai.map(item => item));
+console.log(pazymiai.map(item => 2*item));
+console.log(pazymiai.map(item => item % 2));
+console.log(pazymiai.map(item => item - 1));
+console.log('xxxxxxxxxxxxxxx');
+
+console.log(pazymiai.filter(item => item));
+console.log(pazymiai.filter(item => item > 9));
+console.log(pazymiai.filter(item => item <= 9));
+console.log(pazymiai.filter(item => item >= 7 && item <10));
+console.log('xxxxxxxxxxxxxxx');
+
+console.log(pazymiai.reduce((total, item) => total + item, 0)); // sutraukia visas reiksmes i viena
+console.log(pazymiai.reduce((total, item) => total + item, 1)); // 
+console.log(pazymiai.reduce((total, item) => total + item)); // 
+console.log(pazymiai.reduce((total, item) => total * item, 0));
+console.log(pazymiai.reduce((total, item) => total - item, 0));
+console.log(pazymiai.reduce((total, item) => total / item));
+console.log('xxxxxxxxxxxxxxx');
+
+let skaiciai = [1, 2, 3, 10, 20, 30, 111, 202, 11]
+console.log(skaiciai.sort()); // sortina lyg lygintu ne skaitines reiksmes dydi, o tekstines reiksmes
+console.log(skaiciai.sort((a, b) => a-b)); // didejimo tvarka
+console.log(skaiciai.sort((a, b) => b-a)); // mazejimo tvarka
+
+let tekstas = ['abc', 'a', 'xx', 'xaaaa']
+console.log(tekstas.sort());
+console.log(tekstas.sort().reverse());
+console.log(tekstas.sort((a, b) => a.length - b.length));
+console.log('xxxxxxxxxxxxxxx');
+let matrica = [
+    [0, 1],
+    [10, 4],
+    [9, 8],
+]
+console.log(matrica.flat()); // array pamazina vienu leveliu, matrica matricoje = matrica
+console.log('xxxxxxxxxxxxxxx');
+
+console.log(Math.min(5, 4, 7, 0));
+console.log(Math.max(5, 4, 7, 0));
+let sk = [5, 4, 7, 0];
+console.log(Math.min(sk));          
+console.log(Math.max(sk));
+console.log(Math.min(...sk));       // spread operatorius '...' vietoj masyvo paduoda skaiciu eilute
+console.log(Math.max(...sk));       // spread operatorius '...' vietoj masyvo paduoda skaiciu eilute
+console.log('xxxxxxxxxxxxxxx');
+
+let a1 = [0, 1];
+let a2 = [2, 3];
+let a3 = [4, 5];
+let a123 = [...a1, ...a2, ...a3];   // sudeda masyvus naudojant spread
+let a132 = [...a1, ...a3, ...a2];   // sudeda masyvus naudojant spread
+let a213 = [...a2, ...a1, ...a3];   // sudeda masyvus naudojant spread
+console.log(a123);                  
+console.log(a132);
+console.log(a213);
+
+console.log('xxxxxxxxxxxxxxx');
 
 /*
 OBJECT
 */
+console.log('xxxxxxxxxxxxxxx');
+console.log('OBJECT');
+console.log('xxxxxxxxxxxxxxx');
 
+let zmogus = {
+    vardas: "Algirdas",
+    amzius: 45,
+    vedes: true,
+    vaikai: 4,
+}
+
+console.log(zmogus.vardas);
+console.log(zmogus.amzius);
+console.log(zmogus.vedes);
+console.log(zmogus['vardas']);
+console.log(zmogus['amzius']);
+console.log(zmogus['vedes']);
+console.log(zmogus);
+
+console.log();        // automatinis visu objekto keys istraukimas
+let zmogusKeys = Object.keys(zmogus);
+console.log();        // automatinis visu objekto values istraukimas
+for (let key of zmogusKeys) {
+    console.log(key, ':', zmogus[key]);
+}
+
+for (const key in zmogus) {             // vienintelis ciklas darbui su objektu
+    console.log(key, ':', zmogus[key]);
+}
+
+console.log('xxxxxxxxxxxxxxx');
+console.log({...zmogus});       // ...spread'iname objekta ir tokiu budu padarome kopija, keiciame reiksmes, pridedam naujas
+console.log({...zmogus, masina: 'Passat'});
+console.log({...zmogus, amzius: 46});
+console.log({vedes: false, ...zmogus});
+
+let objA = {
+    a: 'a',
+    c: 'c',
+    b: 'pirmiau'
+}
+let objB = {
+    b: 'antriau',
+    d: 'd',
+}
+
+let objAB = {...objA, ...objB};
+console.log(objAB);
+let objBA = {...objB, ...objA};
+console.log(objBA);
+
+console.log('xxxxxxxxxxxxxxx');
+/*
+DESTRUCTURING
+*/
+console.log('xxxxxxxxxxxxxxx');
+console.log('DESTRUCTURING');
+console.log('xxxxxxxxxxxxxxx');
+
+let skaiciukai = [10, 2, 9, 11, 'a', -1, true];
+let pirmukas = skaiciukai[0];               //reiksmei priskiriame vieta masyve, daroma po viena
+let antrukas = skaiciukai[1];
+let treciukas = skaiciukai[2];
+console.log(pirmukas, antrukas, treciukas);
+let [pirm, antr, trec, ...kita] = skaiciukai;        // same effect - priskiria reiksmei vieta masyve, tik galima priskirti daugiau nei viena iskart
+console.log(pirm, antr, trec, kita);
+
+let auto = {
+    marke: 'Passat',
+    megstama: false,
+    spalva: 'pilka',
+}
+let {marke, spalva, megstama} = auto;
+console.log(marke, spalva, megstama);
