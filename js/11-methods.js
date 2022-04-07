@@ -50,8 +50,9 @@ let randomnr = Math.floor(Math.random()*10); // [0..9]
 console.log(randomnr);
 let nuo = 10;
 let iki = 19;
-let randomNuoIki = nuo + Math.floor(Math.random()*(iki-nuo+1));
+let randomNuoIki = nuo + Math.floor(Math.random()*(iki-nuo+1))
 for (let index = 0; index < 20; index++) {
+    let randomNuoIki = nuo + Math.floor(Math.random()*(iki-nuo+1));
     console.log(randomNuoIki);
 }
 
