@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./js/11-methods.js",
+    "dev": "nodemon ./praktine-uzduotis-04-08/sprendimas.js",
     "hw": "nodemon ./js/hw.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
