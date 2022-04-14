@@ -106,13 +106,14 @@ Jei kintamieji skaičiai, grąžinti skaičių sumą, jei kintamieji masyvai - g
 console.log('xxxxxxxxxxxxxxx');
 
 function lygineSuma(a, b) {
-    if (typeof a == 'number' && typeof b == 'number') {
-        if ((a + b) % 2 == 0) {
+    if (typeof a === 'number' && typeof b === 'number') {
+        if ((a + b) % 2 === 0) {
             return (a+b);
         } else {
             return ('suma nelyginė');
         }
-    } else if (typeof a == 'array' && typeof b == 'array') {
+    }
+    else if (typeof a == 'object' && typeof b == 'object') {  // buvo galima naudoti if (Array.isArray(a) && Array.isArray(b))
         if ((a.length + b.length) % 2 == 0) {
             return (a.length + b.length);
         } else {
@@ -122,9 +123,9 @@ function lygineSuma(a, b) {
         return ('kintamieji nevienodo arba netinkamo tipo');
     }
 }
-console.log(lygineSuma (5, 5));
+console.log(lygineSuma (1, 2));
 let ma8 = [1, 2, 3];
-let mb8 = [1, 2, 3];
+let mb8 = [1, 2, 3,];
 console.log(lygineSuma (ma8, mb8));
 console.log(lygineSuma (2, [1, 2]));
 console.log(lygineSuma ('a', [1, 2]));
